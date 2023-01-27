@@ -22,11 +22,64 @@
 
     </head>
 
-    <body>
+    <body class="d-flex justify-content-center align-items-center">
 
-        <div id="app">
+        <div id="app" class="big-container d-flex">
+            <div class="box-30">
+                <div class="user d-flex align-items-center justify-content: space-between;">
+                    <div class="user-slot d-flex align-items-center">
+                        <div class="box-img">
+                            <img src="img/avatar_io.jpg" alt="user-img">
+                        </div>
+                        <div class="user-name">
+                            <p>Sofia</p>
+                        </div>
+                    </div>   
 
+                    <div class="user-icon d-flex align-items-center justify-content-end">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="notifications d-flex flex-nowrap align-items-center">
+                    <div class="box-img">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="inf-text ps-2">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#">Attiva notifiche desktop</a> 
+                    </div>
+                </div>
 
+                <div class="search-bar p-1">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text">
+                </div>
+
+                <div class="user-list">
+                    <div class="user d-flex align-items-center justify-content: space-between;" v-for="contact in contacts">
+                        <div class="user-slot d-flex">
+                            <div class="box-img">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="user-img">
+                            </div>
+                            <div class="user-name">
+                                <p>{{contact.name}}</p>
+                                <small>Ultimo messaggio inviato</small>
+                            </div>
+                        </div>    
+                        <div class="date text-end">
+                            <small>12.00</small>
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+            
+            <div class="box-70">
+                ciao
+            </div>
+ 
         </div>
 
 
