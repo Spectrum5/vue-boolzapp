@@ -26,7 +26,7 @@
 
         <div id="app" class="big-container d-flex">
             <div class="box-30">
-                <div class="user d-flex align-items-center justify-content: space-between;">
+                <div class="user d-flex align-items-center justify-content-between bg-grey">
                     <div class="user-slot d-flex align-items-center">
                         <div class="box-img">
                             <img src="img/avatar_io.jpg" alt="user-img">
@@ -42,7 +42,7 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="notifications d-flex flex-nowrap align-items-center">
+                <div class="notifications d-flex align-items-center">
                     <div class="box-img">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
@@ -58,8 +58,8 @@
                 </div>
 
                 <div class="user-list">
-                    <div class="user d-flex align-items-center justify-content: space-between;" v-for="contact in contacts">
-                        <div class="user-slot d-flex">
+                    <div class="user d-flex align-items-center justify-content-between" v-for="contact in contacts">
+                        <div class="user-slot d-flex align-items-center">
                             <div class="box-img">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="user-img">
                             </div>
@@ -76,8 +76,32 @@
                 </div>
             </div>
             
-            <div class="box-70">
-                ciao
+            <div class="box-70 d-flex flex-column">
+                <div class="user d-flex align-items-center justify-content-between bg-grey">
+                    <div class="user-slot d-flex align-items-center">
+                        <div class="box-img">
+                            <img src="img/avatar_1.jpg" alt="user-img">
+                        </div>
+                        <div class="user-name">
+                            <p>Michele</p>
+                            <small>Ultimo accesso oggi alle 12.00</small>
+                        </div>
+                    </div>       
+                    <div class="user-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="chat-message"> 
+                </div>
+                <div class="bar-message d-flex bg-grey">
+                    <div><i class="fa-regular fa-face-smile"></i></div>
+                    <div class="message-text">
+                        <input type="text">
+                    </div>
+                    <div><i class="fa-solid fa-microphone"></i></div>
+                </div>
             </div>
  
         </div>
