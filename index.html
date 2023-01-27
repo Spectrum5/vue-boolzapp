@@ -82,10 +82,10 @@
                 <div class="user d-flex align-items-center justify-content-between bg-grey">
                     <div class="user-slot d-flex align-items-center">
                         <div class="box-img">
-                            <img src="img/avatar_1.jpg" alt="user-img">
+                            <img :src="`img/avatar${contacts[active].avatar}.jpg`" alt="user-img">
                         </div>
                         <div class="user-name">
-                            <p>Michele</p>
+                            <p>{{contacts[active].name}}</p>
                             <small>Ultimo accesso oggi alle 12.00</small>
                         </div>
                     </div>       
@@ -107,7 +107,7 @@
                       </div>
                     </div> 
                 </div>
-                
+
                 <!-- bar message -->
                 <div class="bar-message d-flex bg-grey">
                     <div><i class="fa-regular fa-face-smile"></i></div>
