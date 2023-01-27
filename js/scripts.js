@@ -180,13 +180,20 @@ const {createApp} = Vue;
                 };
                 this.active = index;
             },
+            // Aggiunta messaggio nella chat più risposta dopo 1 secondo
             insertMessage(){     
                 let newObject = {
                     date: '',
                     message: this.newMessage,
                     status: 'sent'
                 };
+                let response = {
+                    message: `ok!!!`
+                }
                 this.messages.push(newObject);
+                setTimeout(() => {
+                    this.messages.push(response);
+                }, 1000),
                 this.newMessage = '';
             }
         }
