@@ -168,6 +168,7 @@ const {createApp} = Vue;
                 ],
                 messages:[],
                 active: 0,
+                newMessage:'',
             }
         },
         methods:{
@@ -178,6 +179,15 @@ const {createApp} = Vue;
                     this.messages.push(message[i])
                 };
                 this.active = index;
+            },
+            insertMessage(){     
+                let newObject = {
+                    date: '',
+                    message: this.newMessage,
+                    status: 'sent'
+                };
+                this.messages.push(newObject);
+                this.newMessage = '';
             }
         }
     }).mount(`#app`);

@@ -56,8 +56,8 @@
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input type="text">
                 </div>
+
                 <!-- user list generata con v-for -->
-                
                 <div class="user-list">
                     <div class="user d-flex align-items-center justify-content-between" v-for="(contact, index) in contacts" @click="userSelector(index)" :class="{'bg-grey' : index === active}">
                     
@@ -107,10 +107,14 @@
                       </div>
                     </div> 
                 </div>
+                
+                <!-- bar message -->
                 <div class="bar-message d-flex bg-grey">
                     <div><i class="fa-regular fa-face-smile"></i></div>
                     <div class="message-text">
-                        <input type="text">
+                        <form @submit.prevent="insertMessage">
+                            <input type="text" v-model="newMessage">
+                        </form>
                     </div>
                     <div><i class="fa-solid fa-microphone"></i></div>
                 </div>
