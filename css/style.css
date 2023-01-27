@@ -13,6 +13,10 @@ img {
     background-color: #eaeaea;
 }
 
+.bg-green {
+    background-color: #d5f9ba;
+}
+
 /* CONTAINER */
 .big-container {
     width: calc(100% - 200px);
@@ -32,6 +36,11 @@ img {
 .box-img {
     width: 50px;
     height: 50px;
+}
+
+.container-chat {
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
 }
 
 /* SLIDE BAR */
@@ -84,13 +93,29 @@ img {
     height: calc(100% - 190px);
 }
 
-/* box-70 chat message */
-.chat-message{
+/* BOX-70 CHAT MESSAGE */
+.chat-message {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
 }
 
+.message-sent {
+    padding: 15px;
+    margin: 10px;
+    margin-left: 500px;
+    border-radius: 10px;
+}
+
+.message-received {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 500px;
+}
+
+/* BAR MESSAGE */
 .bar-message {
     padding: 15px 5px;
 }

@@ -166,6 +166,18 @@ const {createApp} = Vue;
                         ],
                     }
                 ],
+                messages:[],
+                active: 0,
+            }
+        },
+        methods:{
+            userSelector(index){
+                this.messages = [];
+                let message = this.contacts[index].messages
+                for(let i = 0; i < message.length; i++){
+                    this.messages.push(message[i])
+                };
+                this.active = index;
             }
         }
     }).mount(`#app`);

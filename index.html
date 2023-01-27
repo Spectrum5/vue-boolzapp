@@ -56,9 +56,11 @@
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input type="text">
                 </div>
-
+                <!-- user list generata con v-for -->
+                
                 <div class="user-list">
-                    <div class="user d-flex align-items-center justify-content-between" v-for="contact in contacts">
+                    <div class="user d-flex align-items-center justify-content-between" v-for="(contact, index) in contacts" @click="userSelector(index)" :class="{'bg-grey' : index === active}">
+                    
                         <div class="user-slot d-flex align-items-center">
                             <div class="box-img">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="user-img">
@@ -93,7 +95,17 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="chat-message"> 
+                <div class="chat-message d-flex justify-content-center align-items-center"> 
+                    <div class="container-chat">
+                        <div v-for="message in messages">
+                            <div v-if="message.status === 'sent'" class="message-sent bg-green">
+                                <p>{{message.message}}</p>
+                            </div>
+                            <div v-else class="message-received">
+                                {{message.message}}
+                            </div>
+                      </div>
+                    </div> 
                 </div>
                 <div class="bar-message d-flex bg-grey">
                     <div><i class="fa-regular fa-face-smile"></i></div>
