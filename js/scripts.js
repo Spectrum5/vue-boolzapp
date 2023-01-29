@@ -169,6 +169,7 @@ const {createApp} = Vue;
                 messages:[],
                 active: 0,
                 newMessage:'',
+                searchName: '',
             }
         },
         methods:{
@@ -180,6 +181,7 @@ const {createApp} = Vue;
                 };
                 this.active = index;
             },
+            
             // Aggiunta messaggio nella chat più risposta dopo 1 secondo
             insertMessage(){     
                 let newObject = {
@@ -195,6 +197,21 @@ const {createApp} = Vue;
                     this.messages.push(response);
                 }, 1000),
                 this.newMessage = '';
-            }
+            },
+
+            // Rimozione messaggio
+            removeMessage(index){
+                console.log(index)
+                this.messages.splice(index,1)
+            },
+
+            // Aggiunta ricerca chat
+            filterList(contact) {
+                if(this.searchName == ``){
+                    return true;
+                }
+                return contact.name.toLowerCase().
+                startsWith(this.searchName.toLowerCase());  // problema da chiedere
+            },
         }
     }).mount(`#app`);
