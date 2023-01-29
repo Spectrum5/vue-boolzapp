@@ -59,7 +59,7 @@
 
                 <!-- user list generata con v-for -->
                 <div class="user-list">
-                    <div class="user d-flex align-items-center justify-content-between" v-for="(contact, index) in contacts" @click="userSelector(index)" v-show="filterList(contact)" :class="{'bg-grey' : index === active}">
+                    <div class="user" v-for="(contact, index) in contacts" @click="userSelector(index)" v-show="filterList(contact)" :class="{'bg-grey' : index === active}">  <!--Da chiedere ad Alessio la questione d-flex-->
                     
                         <div class="user-slot d-flex align-items-center">
                             <div class="box-img">
@@ -79,7 +79,7 @@
             </div>
             
             <div class="box-70 d-flex flex-column">
-                <div class="user d-flex align-items-center justify-content-between bg-grey">
+                <div class="user bg-grey">
                     <div class="user-slot d-flex align-items-center">
                         <div class="box-img">
                             <img :src="`img/avatar${contacts[active].avatar}.jpg`" alt="user-img">

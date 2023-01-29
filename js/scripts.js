@@ -211,7 +211,7 @@ const {createApp} = Vue;
                     return true;
                 }
                 return contact.name.toLowerCase().
-                startsWith(this.searchName.toLowerCase());  // problema da chiedere
+                startsWith(this.searchName.toLowerCase());
             },
         }
     }).mount(`#app`);
