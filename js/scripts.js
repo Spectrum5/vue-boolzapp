@@ -166,22 +166,23 @@ const {createApp} = Vue;
                         ],
                     }
                 ],
-                messages:[],
+                allMessages:[],
                 active: 0,
                 newMessage:'',
                 searchName: '',
             }
         },
         methods:{
+            //metodo per pushare su una nuova lista i messaggi di ogni utente
             userSelector(index){
-                this.messages = [];
+                this.allMessages = [];
                 let message = this.contacts[index].messages
                 for(let i = 0; i < message.length; i++){
-                    this.messages.push(message[i])
+                    this.allMessages.push(message[i])
                 };
                 this.active = index;
             },
-            
+            // Metodo controllo messaggio inviato o ricevuto
             // Aggiunta messaggio nella chat più risposta dopo 1 secondo
             insertMessage(){     
                 let newObject = {
@@ -192,20 +193,19 @@ const {createApp} = Vue;
                 let response = {
                     message: `ok!!!`
                 }
-                this.messages.push(newObject);
+                this.allMessages.push(newObject);
                 setTimeout(() => {
-                    this.messages.push(response);
+                    this.allMessages.push(response);
                 }, 1000),
                 this.newMessage = '';
             },
 
             // Rimozione messaggio
             removeMessage(index){
-                console.log(index)
-                this.messages.splice(index,1)
+                this.allMessages.splice(index,1)
             },
 
-            // Aggiunta ricerca chat
+            // Aggiunta ricerca chat v-show
             filterList(contact) {
                 if(this.searchName == ``){
                     return true;
@@ -213,5 +213,9 @@ const {createApp} = Vue;
                 return contact.name.toLowerCase().
                 startsWith(this.searchName.toLowerCase());
             },
+            //Selezionare ultimo messaggio presente in ogni oggetto
+            lastMessage(contact){
+                return contact.messages[contact.messages.length - 1]
+              }
         }
     }).mount(`#app`);

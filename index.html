@@ -57,7 +57,7 @@
                     <input type="text" v-model="searchName">
                 </div>
 
-                <!-- user list generata con v-for -->
+                <!-- user list generata con v-for più v-show per ricerca chat -->
                 <div class="user-list">
                     <div class="user" v-for="(contact, index) in contacts" @click="userSelector(index)" v-show="filterList(contact)" :class="{'bg-grey' : index === active}">  <!--Da chiedere ad Alessio la questione d-flex-->
                     
@@ -67,7 +67,7 @@
                             </div>
                             <div class="user-name ">
                                 <p>{{contact.name}}</p>
-                                <small>Ultimo messaggio inviato</small>
+                                <small>{{lastMessage(contact).message}}</small>
                             </div>
                         </div>    
                         <div class="date text-end">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="chat-message d-flex justify-content-center align-items-center"> 
                     <div class="container-chat">
-                        <div v-for="(message, index) in messages">
+                        <div v-for="(message, index) in allMessages">
                             <div v-if="message.status === 'sent'" class="message-sent justify-content-between align-items-center bg-green flex">
                                 <div>
                                     <p>{{message.message}}</p>
