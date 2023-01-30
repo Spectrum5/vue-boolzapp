@@ -23,9 +23,11 @@
     </head>
 
     <body class="d-flex justify-content-center align-items-center">
-
+        <!-- Creato contenitore VueJS -->
         <div id="app" class="big-container d-flex">
+            <!-- User-list e search-user -->
             <div class="box-30">
+                <!-- nav bar e user -->
                 <div class="user d-flex align-items-center justify-content-between bg-user border-end">
                     <div class="user-slot d-flex align-items-center">
                         <div class="box-img">
@@ -42,6 +44,7 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+                <!-- Notification -->
                 <div class="notifications d-flex align-items-center">
                     <div class="box-img">
                         <i class="fa-solid fa-bell-slash"></i>
@@ -51,7 +54,7 @@
                         <a href="#">Attiva notifiche desktop</a> 
                     </div>
                 </div>
-
+                <!-- Search users bar -->
                 <div class="search-bar p-1">
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input type="text" v-model="searchName">
@@ -78,6 +81,7 @@
                 </div>
             </div>
             
+            <!-- Container chat e input message -->
             <div class="box-70 d-flex flex-column">
                 <div class="user bg-user">
                     <div class="user-slot d-flex align-items-center">
@@ -96,7 +100,7 @@
                     </div>
                 </div>
 
-                <!-- Container chat -->
+                <!-- Container chat e imput-->
                 <div class="chat-message d-flex justify-content-center align-items-center"> 
                     <div class="container-chat">
                         <div v-for="(message, index) in contacts[active].messages" :class="{'d-flex justify-content-end' : message.status === 'sent'}">
