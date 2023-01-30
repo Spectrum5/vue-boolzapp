@@ -1,4 +1,26 @@
-:root {
+:root{
+    /* message section */
     --send_message: #d5f9ba;
+    --received_message:white;
+
+    /* list section */
     --user_select:#eaeaea;
+    --bg_logo_notification:white;
+    --bg_notification:#8edafc;
+    --color_logo:var(--bg_notification);
+    --bg_user_list:white;
+    
+    /* container section */
+    --main_container:white;
+    --color_black: black;
+    --body_color: linear-gradient(to bottom, #009688 17%,#d7dbd7 0%);
+
+    /* search message */
+    --search_bar:white;
+    
+    /* dropdown color */
+    --dropdown-text:black;
+    --dropdown-bg:white;
+    --dropdown-hover:#323b40;
+    --dropdown-hover-bg:#f0f0f0;
 }

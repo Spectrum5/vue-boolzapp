@@ -2,7 +2,7 @@
 @import "var-color.css";
 
 body {
-    background:linear-gradient(to bottom, #009688 10%,#d7dbd7 0%);
+    background: var(--body_color);
     height: 100vh;
 }
 
@@ -25,16 +25,16 @@ img {
     background-color: var(--send_message);
 }
 
-.bg-white {
-    background-color: white;
+.bg-rec-mess{
+    background-color: var(--received_message);
 }
 
 /* CONTAINER */
 .big-container {
     width: calc(100% - 200px);
     height: calc(100% - 30px);
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--main_containerz);
+    border: 1px solid var(--color_black);
 }
 
 .box-30 {
@@ -65,19 +65,23 @@ img {
 
 /* NOTIFICATION */
 .notifications {
-    background-color: #8edafc;
+    background-color: var(--bg_notification);
     padding: 10px;
 }
 
 .notifications .box-img {
-    background-color: white;
+    background-color: var(--bg_logo_notification);
     border-radius: 100%;
     text-align: center;
     line-height: 50px;
-    color: #8edafc;
+    color: var(--color_logo);
 }
 
 /* SEARCH BAR */
+.search-bar {
+    background-color: var(--search_bar);
+}
+
 .search-bar input {
     width: calc(100% - 80px);
     padding: 10px 0px;
@@ -91,7 +95,7 @@ img {
 /* USER LIST */
 .user-list {
     overflow-y: scroll;
-    background-color: white;
+    background-color: var(--bg_user_list);
     height: calc(100% - 196px);
 }
 
@@ -162,7 +166,7 @@ img {
 .dropdown-hover {
     display: inline-block;
     background-color: transparent;
-    color: black;
+    color: var(--dropdown-text);
     cursor:pointer;
     border: none;
 }
@@ -173,7 +177,7 @@ img {
     top:20%;
     right: 10px;
     min-width: 120px;
-    background: white;
+    background: var(--dropdown-bg);
     box-shadow: 0 3px 2px rgba(0,0,0,0.3);
 }
 
@@ -190,6 +194,6 @@ img {
 }
 
 .dropdown-menu a:hover {
-    background-color: #f0f0f0;
-    color: #323b40;
+    background-color: var(--dropdown-hover-bg);
+    color: var(--dropdown-hover);
 }
