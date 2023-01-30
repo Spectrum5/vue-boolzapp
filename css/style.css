@@ -1,4 +1,6 @@
 /* REGOLE GENERALI */
+@import "var-color.css";
+
 body {
     background:linear-gradient(to bottom, #009688 10%,#d7dbd7 0%);
     height: 100vh;
@@ -14,12 +16,17 @@ img {
     display: block;
 }
 
-.bg-grey {
-    background-color: #eaeaea;
+/* Color */
+.bg-user {
+    background-color: var(--user_select) 
 }
 
-.bg-green {
-    background-color: #d5f9ba;
+.bg-send-mess {
+    background-color: var(--send_message);
+}
+
+.bg-white {
+    background-color: white;
 }
 
 /* CONTAINER */
@@ -41,11 +48,6 @@ img {
 .box-img {
     width: 50px;
     height: 50px;
-}
-
-.container-chat {
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
 }
 
 /* SLIDE BAR */
@@ -86,6 +88,13 @@ img {
     padding: 10px 30px;
 }
 
+/* USER LIST */
+.user-list {
+    overflow-y: scroll;
+    background-color: white;
+    height: calc(100% - 196px);
+}
+
 .user {
     display: flex;
     justify-content: space-between;
@@ -94,38 +103,27 @@ img {
     padding: 10px 5px;
 }
 
-
-/* USER LIST */
-.user-list {
-    overflow-y: scroll;
-    background-color: white;
-    height: calc(100% - 196px);
+/* BOX-70 CHAT MESSAGE */
+.container-chat {
+    width: calc(100% - 200px);
+    height: calc(100% - 80px);
 }
 
-/* BOX-70 CHAT MESSAGE */
 .chat-message {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
 }
 
-.message-sent {
-    padding: 15px;
-    margin: 10px;
-    margin-left: 600px;
+.user-message {
+    padding: 10px;
+    margin: 5px;
     border-radius: 10px;
+    width: 350px;
 }
 
 .message-sent small {
     font-size: 10px;
-}
-
-.message-received {
-    padding: 10px 10px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: white;
-    margin-right: 600px;
 }
 
 /* BAR MESSAGE */
@@ -146,26 +144,29 @@ img {
     padding: 10px 30px;
 }
 
-/* dropdown */
+/* DROPDOWN */
 .dropdown button {
     border-radius: 10px;
 }
+
 .dropdown small {
     display: block;
 }
+
 .dropdown {
     position: relative;
     display: inline-block;
     z-index: 10;
 }
+
 .dropdown-hover {
     display: inline-block;
-    padding: 10px;
     background-color: transparent;
     color: black;
     cursor:pointer;
     border: none;
 }
+
 .dropdown-menu {
     position: absolute;
     display: none;
@@ -179,13 +180,15 @@ img {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
 .dropdown-menu a {
     display: block;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
     border: none;
     border-top: solid 1px #e0e0e0;
 }
+
 .dropdown-menu a:hover {
     background-color: #f0f0f0;
     color: #323b40;

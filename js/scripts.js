@@ -164,9 +164,8 @@ const {createApp} = Vue;
                                 status: 'received'
                             }
                         ],
-                    }
+                    },
                 ],
-                allMessages:[],
                 active: 0,
                 newMessage:'',
                 searchName: '',
@@ -175,16 +174,11 @@ const {createApp} = Vue;
         methods:{
             //metodo per pushare su una nuova lista i messaggi di ogni utente
             userSelector(index){
-                this.allMessages = [];
-                let message = this.contacts[index].messages
-                for(let i = 0; i < message.length; i++){
-                    this.allMessages.push(message[i])
-                };
                 this.active = index;
             },
             // Metodo controllo messaggio inviato o ricevuto
             // Aggiunta messaggio nella chat più risposta dopo 1 secondo
-            insertMessage(){     
+            insertMessage(){
                 let newObject = {
                     date: '',
                     message: this.newMessage,
@@ -193,16 +187,16 @@ const {createApp} = Vue;
                 let response = {
                     message: `ok!!!`
                 }
-                this.allMessages.push(newObject);
+                this.contacts[this.active].messages.push(newObject);
                 setTimeout(() => {
-                    this.allMessages.push(response);
+                    this.contacts[this.active].messages.push(response);
                 }, 1000),
                 this.newMessage = '';
             },
 
             // Rimozione messaggio
             removeMessage(index){
-                this.allMessages.splice(index,1)
+                this.contacts[this.active].messages.splice(index,1)
             },
 
             // Aggiunta ricerca chat v-show

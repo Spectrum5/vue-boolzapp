@@ -26,7 +26,7 @@
 
         <div id="app" class="big-container d-flex">
             <div class="box-30">
-                <div class="user d-flex align-items-center justify-content-between bg-grey border-end">
+                <div class="user d-flex align-items-center justify-content-between bg-user border-end">
                     <div class="user-slot d-flex align-items-center">
                         <div class="box-img">
                             <img src="img/avatar_2.jpg" alt="user-img">
@@ -59,7 +59,7 @@
 
                 <!-- user list generata con v-for più v-show per ricerca chat -->
                 <div class="user-list">
-                    <div class="user" v-for="(contact, index) in contacts" @click="userSelector(index)" v-show="filterList(contact)" :class="{'bg-grey' : index === active}">  <!--Da chiedere ad Alessio la questione d-flex-->
+                    <div class="user" v-for="(contact, index) in contacts" @click="userSelector(index)" v-show="filterList(contact)" :class="{'bg-user' : index === active}">  <!--Da chiedere ad Alessio la questione d-flex-->
                     
                         <div class="user-slot d-flex align-items-center">
                             <div class="box-img">
@@ -67,7 +67,7 @@
                             </div>
                             <div class="user-name ">
                                 <p>{{contact.name}}</p>
-                                <small>{{lastMessage(contact).message}}</small>
+                                <small>{{lastMessage(contacts[index]).message}}</small>
                             </div>
                         </div>    
                         <div class="date text-end">
@@ -79,7 +79,7 @@
             </div>
             
             <div class="box-70 d-flex flex-column">
-                <div class="user bg-grey">
+                <div class="user bg-user">
                     <div class="user-slot d-flex align-items-center">
                         <div class="box-img">
                             <img :src="`img/avatar${contacts[active].avatar}.jpg`" alt="user-img">
@@ -95,10 +95,12 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+
+                <!-- Container chat -->
                 <div class="chat-message d-flex justify-content-center align-items-center"> 
                     <div class="container-chat">
-                        <div v-for="(message, index) in allMessages">
-                            <div v-if="message.status === 'sent'" class="message-sent justify-content-between align-items-center bg-green flex">
+                        <div v-for="(message, index) in contacts[active].messages" :class="{'d-flex justify-content-end' : message.status === 'sent'}">
+                            <div v-if="message.status === 'sent'"  class="user-message bg-send-mess justify-content-between align-items-center d-flex">
                                 <div>
                                     <p>{{message.message}}</p>
                                 </div>
@@ -110,22 +112,22 @@
                                     <small>12.00</small>
                                 </div>
                             </div>
-                            <div v-else class="message-received">
+                            <div v-else class="bg-white user-message">
                                 {{message.message}}
                             </div>
-                      </div>
+                        </div>
                     </div> 
                 </div>
 
                 <!-- bar message -->
-                <div class="bar-message d-flex bg-grey">
-                    <div><i class="fa-regular fa-face-smile"></i></div>
+                <div class="bar-message d-flex bg-user">
+                    <button><i class="fa-regular fa-face-smile"></i></button>
                     <div class="message-text">
                         <form @submit.prevent="insertMessage">
                             <input type="text" v-model="newMessage">
                         </form>
                     </div>
-                    <div><i class="fa-solid fa-microphone"></i></div>
+                    <button><i class="fa-solid fa-microphone"></i></button>
                 </div>
             </div>
  
