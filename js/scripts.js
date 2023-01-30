@@ -210,6 +210,8 @@ const {createApp} = Vue;
             //Selezionare ultimo messaggio presente in ogni oggetto
             lastMessage(contact){
                 return contact.messages[contact.messages.length - 1]
-              }
+            },
+
+            //Metodo per formattare la data
         }
     }).mount(`#app`);
